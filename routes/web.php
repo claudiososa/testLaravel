@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Subject;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $subjects = Subject::all();
+
+    return view('forms.message',[
+        "subjects" => $subjects,
+    ]);
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/api/create_message','MessageController@store');
+
+
+Route::get('/exportar/pdf','MessageController@export_pdf')->name('export_pdf');
+Route::get('/exportar/excel','MessageController@export_excel')->name('export_excel');
+
+
+Route::get('/list/messages','MessageController@list')->name('list_message');
