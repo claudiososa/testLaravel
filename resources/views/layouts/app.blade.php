@@ -21,7 +21,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <script>
+    <style>
          html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -30,7 +30,7 @@
                 height: 100vh;
                 margin: 0;
             }
-    </script>
+    </style>
 </head>
 <body>
     <div id="app">

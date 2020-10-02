@@ -13,16 +13,16 @@
 
                         <div class="form-group">
                             <label for="fromName">Nombre</label>
-                            <input type="text" name="fromName" id="fromName" class="form-control">
+                            <input type="text" name="fromName" id="fromName" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                             <label for="fromEmail">Email</label>
-                            <input type="text" name="fromEmail" id="fromEmail" class="form-control">
+                            <input type="text" name="fromEmail" id="fromEmail" class="form-control" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Nombre</label>
+                            <label for="subject_id">Asunto</label>
                             <select name="subject_id" id="subject_id" class="form-control">
                                 @forelse ($subjects as $subject)
                                     <option value="{{$subject->id}}">{{$subject->desc}}</option>    
