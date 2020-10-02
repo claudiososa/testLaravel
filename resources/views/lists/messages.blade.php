@@ -15,6 +15,7 @@
                             <th>Id</th>
                             <th>Nombre</th>
                             <th>Email</th>                        
+                            <th>Asunto</th>                        
                         </tr>
                     </thead>
                     <tbody>
@@ -24,6 +25,7 @@
                                 <td>{{$message->id}}</td>
                                 <td>{{$message->fromName}}</td>
                                 <td>{{$message->fromEmail}}</td>
+                                <td>{{$message->subject->desc}}</td>
                             </td>
                         </tr>
 

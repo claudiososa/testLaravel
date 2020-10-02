@@ -11,7 +11,7 @@
     <hr>
     <p>Nombre: {{$create_message->fromName}}</p>
     <p>Email: {{$create_message->fromEmail}}</p>
-    {{-- <p>Asunto: {{$create_message->subject->desc}}</p> --}}
+    <p>Asunto: {{$create_message->subject->desc}}</p>
     <p>Mensaje</p>
     <p>{{$create_message->body}}</p>
     

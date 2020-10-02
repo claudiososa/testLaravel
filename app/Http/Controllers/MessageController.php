@@ -33,10 +33,9 @@ class MessageController extends Controller
      */
     public function list()
     {
-        $messages = Message::with('subject')->get();
-        $message = Message::with('subject')->find(1);
-        //dd($message->subject->desc);
-
+        
+        $messages = Message::get();     
+        
         return view('lists.messages',[
             'messages' => $messages,
         ]);
@@ -61,12 +60,9 @@ class MessageController extends Controller
                 'spamScore' => $request->spamScore,
     
             ]);
+            
 
-            // $message_id = $create_message->id;
-
-            $message = Message::with('subject')->find($create_message->id);
-
-            Mail::to('vicomser.claudio@gmail.com')->send( new MessageReceived($message));
+            Mail::to('vicomser.claudio@gmail.com')->send( new MessageReceived($create_message));
             
             $message = [
                 'code' => 'ok',

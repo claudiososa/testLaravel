@@ -10,6 +10,7 @@ class Message extends Model
 
     public function subject(){
 
-        return $this->hasOne(Subject::class,'id');
+        //return $this->hasOne(Subject::class,'id');
+        return $this->belongsTo(Subject::class);
     }
 }

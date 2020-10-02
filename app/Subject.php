@@ -9,7 +9,7 @@ class Subject extends Model
     protected $guarded = [];
 
     public function message(){
-
-        return $this->belongsTo(Message::class);
+        return $this->hasMany(Message::class);
+        //return $this->belongsTo(Message::class);
     }
 }
